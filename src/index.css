@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --font-display: "Poppins", "sans-serif";
+    --breakpoint-3xl: 1920px;
+    --color-primary: #d50000; /* Red from the business card */
+    --color-secondary: #2b2b2b; /* Dark grey/black background */
+}
+
+@layer base {
+    html {
+        font-family: var(--font-display);
+    }
+
+    body {
+        background-color: #f9f9f9;
+        color: #1e1e1e;
+        overflow-x: hidden;
+    }
+
+    a {
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+    /* Enhanced button styles */
+    .btn-primary {
+        @apply bg-gray-200 text-gray-700 px-6 py-2.5 rounded-lg font-semibold shadow-lg hover:shadow-xl active:scale-95 transition-all duration-200;
+        border: 2px solid transparent;
+    }
+
+    .btn-primary:hover {
+        border-color: var(--color-primary);
+    }
+
+    .btn-secondary {
+        @apply border-2 border-[--color-primary] text-[--color-primary] px-6 py-2.5 rounded-lg font-semibold hover:bg-[--color-primary] hover:text-white hover:shadow-lg active:scale-95 transition-all duration-200;
+    }
+
+    /* Enhanced navigation link styles */
+    .nav-link {
+        @apply text-gray-700 hover:text-[--color-primary] font-medium transition-all duration-200 relative;
+    }
+
+    .nav-link:hover::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-primary);
+        animation: underline-expand 0.2s ease-out forwards;
+        transform: translateX(-50%);
+    }
+
+    @keyframes underline-expand {
+        from {
+            width: 0;
+        }
+        to {
+            width: 80%;
+        }
+    }
+
+    /* Mobile navigation link styles */
+    .mobile-nav-link {
+        @apply text-gray-700 hover:text-[--color-primary] hover:bg-red-50;
+    }
+
+    /* Enhanced navbar with better shadow and backdrop */
+    .nav-bar {
+        @apply bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-100;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Mobile menu animation */
+    .mobile-menu-enter {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .mobile-menu-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 200ms ease-out, transform 200ms ease-out;
+    }
+
+    .mobile-menu-exit {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .mobile-menu-exit-active {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 200ms ease-in, transform 200ms ease-in;
+    }
+}
