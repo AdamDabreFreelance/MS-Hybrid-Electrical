@@ -1,6 +1,6 @@
 import React from "react";
 import services from "../../data/services";
-import ServiceCard from "./ServiceCard"; // no curly braces unless it's a named export
+import ServiceCard from "./ServiceCard";
 
 const ServiceSection = () => {
     return (
