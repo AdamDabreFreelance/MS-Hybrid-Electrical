@@ -3,8 +3,8 @@ import { HandHeart, Zap, Wrench } from "lucide-react";
 
 const StatsSection = () => {
     return (
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
-            <div className="container mx-auto px-6">
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white ">
+            <div className="container mx-auto px-6 ">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -70,8 +70,6 @@ const StatsSection = () => {
                         <div className="stat-decoration absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-2xl"></div>
                     </div>
                 </div>
-
-                
             </div>
         </section>
     );

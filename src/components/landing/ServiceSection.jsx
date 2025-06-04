@@ -15,8 +15,8 @@ const ServiceSection = () => {
                     ))}
                 </div>
             </div>
+            <div className="mx-auto mt-16 mb-8 w-400 border-t-2 border-red-500"></div>{" "}
         </section>
     );
 };
-
 export default ServiceSection;
